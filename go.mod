@@ -51,7 +51,7 @@ require (
 	github.com/mfridman/tparse v0.8.2 // indirect
 	github.com/nlopes/slack v0.6.0
 	github.com/opencontainers/go-digest v1.0.0
-	github.com/prometheus/client_golang v1.6.0
+	github.com/prometheus/client_golang v1.7.1
 	github.com/rubenv/sql-migrate v0.0.0-20200429072036-ae26b214fa43 // indirect
 	github.com/rusenask/cron v1.1.0
 	github.com/rusenask/docker-registry-client v0.0.0-20200210164146-049272422097
