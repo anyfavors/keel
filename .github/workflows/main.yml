@@ -13,8 +13,8 @@ env:
   IMAGE: anyfavors/keel-rpi
   GOPATH: /home/runner/work/keel/keel/go
   
-  jobs:
-  image:
+jobs:
+   image:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
