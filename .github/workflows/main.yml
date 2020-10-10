@@ -11,7 +11,7 @@ on:
 env:
   REPO: anyfavors/keel
   IMAGE: anyfavors/keel-arm
-  IMAGE_NAME: keel-arm
+  IMAGE_NAME: anyfavors/keel-arm
   #GOPATH: /home/runner/work/keel/go
   
 jobs:
