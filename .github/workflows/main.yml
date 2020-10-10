@@ -11,7 +11,7 @@ on:
 env:
   REPO: anyfavors/keel
   IMAGE: anyfavors/keel-rpi
-  GOPATH: /home/runner/work/keel/go
+  #GOPATH: /home/runner/work/keel/go
   
 jobs:
    image:
@@ -38,12 +38,9 @@ jobs:
         
       - name: image build
         run: |
-          ls ${GOPATH}
-          cd ${GOPATH}/src/github.com/${{ env.REPO }}
           sed -i -e 's/+= -a/+=/g' Makefile
           sed -i -e 's#keelhq/keel-arm#anyfavors/keel#g' Makefile
           sed -i -e 's/# docker push/docker push/g' Makefile
-          ls /home/runner/work/keel/keel/go/src/
           make build-arm fetch-certs
           VERSION=${{ steps.recent-tag.outputs.tag }} make armhf
 
