@@ -11,7 +11,7 @@ on:
 env:
   REPO: anyfavors/keel
   IMAGE: anyfavors/keel-rpi
-  GOPATH: /home/runner/work/keel/keel/go
+  GOPATH: /home/runner/work/keel/go
   
 jobs:
    image:
