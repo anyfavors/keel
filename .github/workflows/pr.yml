@@ -36,15 +36,15 @@ jobs:
          command: lint
          config: .test/ct.yaml
          
-      - name: install-charts:
+      - name: install-charts
         uses: helm/chart-testing-action@v1.0.0
         if: steps.lint-charts.outputs.changed == 'true'
         
       - name: Run chart-testing (install)    
-         uses: helm/chart-testing-action@v1.0.0
-         with:
+        uses: helm/chart-testing-action@v1.0.0
+        with:
           command: install
-         run: .test/e2e-kind.sh
+          run: .test/e2e-kind.sh
          
       
       
