@@ -1,5 +1,5 @@
 on:
-  pull_request:
+  push:
     branches: [ master ]
 
 jobs:
@@ -8,5 +8,41 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+    
+      - uses: actions/setup-go@v1
+        with:
+          go-version: 1.14
+          
+          
+      - name: build 
+        run: |
+          make build
+          go get github.com/mfridman/tparse
+          make test
+          
+      - name: lint-scripts
+        run: |
+           docker run --rm -v "$PWD:/mnt:ro" koalaman/shellcheck:stable .scripts/gen_packages.sh
+           docker run --rm -v "$PWD:/mnt:ro" koalaman/shellcheck:stable  .scripts/index_repo.sh
+           docker run --rm -v "$PWD:/mnt:ro" koalaman/shellcheck:stable  .scripts/repo-sync.sh
+           docker run --rm -v "$PWD:/mnt:ro" koalaman/shellcheck:stable  .test/e2e-kind.sh
+           
+      - name: lint-charts
+        id: lint-charts
+        uses: helm/chart-testing-action@v1.0.0
+        with:
+         command: lint
+         config: .test/ct.yaml
+         
+      - name: install-charts:
+        uses: helm/chart-testing-action@v1.0.0
+        if: steps.lint-charts.outputs.changed == 'true'
+        
+      - name: Run chart-testing (install)    
+         uses: helm/chart-testing-action@v1.0.0
+         with:
+          command: install
+         run: .test/e2e-kind.sh
+         
       
       
