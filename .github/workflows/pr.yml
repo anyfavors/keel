@@ -42,7 +42,7 @@ jobs:
         id: lint-charts
         uses: helm/chart-testing-action@v1.0.0
         with:
-         command: lint
+         command: ct lint
          config: .test/ct.yaml
          
       - name: install-charts
