@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+     
+     
     
       - uses: actions/setup-go@v2
         with:
@@ -38,11 +40,14 @@ jobs:
            docker run --rm -v "$PWD:/mnt:ro" koalaman/shellcheck:stable  .scripts/repo-sync.sh
            docker run --rm -v "$PWD:/mnt:ro" koalaman/shellcheck:stable  .test/e2e-kind.sh
            
+      - name: Fetch history
+        run: git fetch --prune --unshallow
+      
       - name: lint-charts
         id: lint-charts
         uses: helm/chart-testing-action@v1.0.0
         with:
-         command: ct lint
+         command: lint
          config: .test/ct.yaml
          
       - name: install-charts
