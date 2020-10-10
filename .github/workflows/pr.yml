@@ -47,7 +47,7 @@ jobs:
         id: lint-charts
         uses: helm/chart-testing-action@v1.0.0
         with:
-         command: lint
+         command: lint --target-branch master --chart-dirs chart
          config: .test/ct.yaml
          
       - name: install-charts
