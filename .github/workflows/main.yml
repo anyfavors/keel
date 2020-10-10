@@ -40,7 +40,7 @@ jobs:
         run: |
           sed -i -e 's/+= -a/+=/g' Makefile
           sed -i -e 's#keelhq/keel-arm#anyfavors/keel#g' Makefile
-          cat Makefile | grep -v "docker push" > Makefile
+          sed -i -e 's#docker push#\#docker push#g' Makefile
           make build-arm fetch-certs
           VERSION=${{ steps.recent-tag.outputs.tag }} make armhf
 
