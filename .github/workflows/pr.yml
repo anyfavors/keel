@@ -23,8 +23,7 @@ jobs:
           sed -i -e 's#keelhq/keel#anyfavors/keel#g' Makefile
           sed -i -e 's#keel-hq/keel#anyfavors/keel#g' Makefile
           sed -i -e 's#docker build -t anyfavors/keel#docker build -t keel#g' Makefile          
-          sudo apt install -y
-          gcc
+          sudo apt install -y gcc
           
       - name: build 
         run: |
