@@ -34,7 +34,7 @@ replace (
 replace k8s.io/kubernetes => k8s.io/kubernetes v1.16.10
 
 require (
-	cloud.google.com/go/pubsub v1.4.0
+	cloud.google.com/go/pubsub v1.8.1
 	github.com/Masterminds/semver v1.5.0
 	github.com/Masterminds/sprig v2.22.0+incompatible // indirect
 	github.com/aws/aws-sdk-go v1.35.7
@@ -60,9 +60,9 @@ require (
 	github.com/stretchr/testify v1.5.1
 	github.com/tbruyelle/hipchat-go v0.0.0-20170717082847-35aebc99209a
 	github.com/urfave/negroni v1.0.0
-	golang.org/x/net v0.0.0-20200602114024-627f9648deb9
-	google.golang.org/api v0.26.0
-	google.golang.org/grpc v1.29.1
+	golang.org/x/net v0.0.0-20200904194848-62affa334b73
+	google.golang.org/api v0.32.0
+	google.golang.org/grpc v1.32.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	helm.sh/helm/v3 v3.0.0-00010101000000-000000000000
 	k8s.io/api v0.17.2
