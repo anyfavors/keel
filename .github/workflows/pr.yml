@@ -1,0 +1,64 @@
+name: PR
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+     
+     
+    
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '^1.13.1'
+ 
+      - name: install packages
+        run: |
+          sed -i -e 's/+= -a/+=/g' Makefile
+          sed -i -e 's#keelhq/keel-arm#anyfavors/keel-arm#g' Makefile
+          sed -i -e 's#docker push#\#docker push#g' Makefile
+          sed -i -e 's#keelhq/keel#anyfavors/keel#g' Makefile
+          sed -i -e 's#keel-hq/keel#anyfavors/keel#g' Makefile
+          sed -i -e 's#docker build -t anyfavors/keel#docker build -t keel#g' Makefile          
+          sudo apt install -y gcc-arm-linux-gnueabihf
+          
+      - name: build 
+        run: |
+          make build
+          go get github.com/mfridman/tparse
+          make test
+          
+      - name: lint-scripts
+        run: |
+           docker run --rm -v "$PWD:/mnt:ro" koalaman/shellcheck:stable .scripts/gen_packages.sh
+           docker run --rm -v "$PWD:/mnt:ro" koalaman/shellcheck:stable  .scripts/index_repo.sh
+           docker run --rm -v "$PWD:/mnt:ro" koalaman/shellcheck:stable  .scripts/repo-sync.sh
+           docker run --rm -v "$PWD:/mnt:ro" koalaman/shellcheck:stable  .test/e2e-kind.sh
+           
+      - name: Fetch history
+        run: git fetch --prune --unshallow
+      
+      - name: lint-charts
+        id: lint-charts
+        uses: helm/chart-testing-action@v1.0.0
+        with:
+         command: lint --target-branch master --chart-dirs chart
+         config: .test/ct.yaml
+         
+      - name: install-charts
+        uses: helm/chart-testing-action@v1.0.0
+        if: steps.lint-charts.outputs.changed == 'true'
+        
+      - name: Run chart-testing (install)    
+        uses: helm/chart-testing-action@v1.0.0
+        with:
+          command: install
+          run: .test/e2e-kind.sh
+         
+      
+      

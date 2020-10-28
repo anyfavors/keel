@@ -1,0 +1,76 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+env:
+  REPO: anyfavors/keel
+  IMAGE: anyfavors/keel-arm
+  IMAGE_NAME: keel-arm
+  #GOPATH: /home/runner/work/keel/go
+  
+jobs:
+   image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-go@v1
+        with:
+          go-version: 1.14
+
+      - name: install packages
+        run: >
+          sudo apt install -y
+          gcc-arm-linux-gnueabihf
+      - name: fetch github recent tag
+        id: recent-tag
+        run: echo "##[set-output name=tag;]$(curl -s https://api.github.com/repos/${REPO}/tags | jq -crM '.[0].name')"
+
+      - name: fetch github recent sha
+        id: recent-sha
+        run: echo "##[set-output name=sha;]$(curl -s https://api.github.com/repos/${REPO}/tags | jq -crM '.[0].commit.sha')"
+        
+        
+      - name: image build
+        run: |
+          sed -i -e 's/+= -a/+=/g' Makefile
+          sed -i -e 's#keelhq/keel-arm#anyfavors/keel-arm#g' Makefile
+          sed -i -e 's#docker push#\#docker push#g' Makefile
+          sed -i -e 's#keelhq/keel#anyfavors/keel#g' Makefile
+          sed -i -e 's#keel-hq/keel#anyfavors/keel#g' Makefile
+          sed -i -e 's#docker build -t anyfavors/keel#docker build -t keel#g' Makefile
+          make build-arm fetch-certs
+          VERSION=${{ steps.recent-tag.outputs.tag }} make armhf-latest
+
+      - name: docker login
+        run: |
+          echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
+        
+      - name: image push
+        run: |
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+          
+          # Change all uppercase to lowercase
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+          
+          # Strip git ref prefix from version
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          
+          # Use Docker `latest` tag convention
+          [ "$VERSION" == "master" ] && VERSION=latest
+          
+          echo IMAGE_ID=$IMAGE_ID
+          echo VERSION=$VERSION
+          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          docker push $IMAGE_ID:$VERSION
+
+        
