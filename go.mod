@@ -68,7 +68,7 @@ require (
 	k8s.io/api v0.19.3
 	k8s.io/apimachinery v0.19.4
 	k8s.io/cli-runtime v0.17.2
-	k8s.io/client-go v0.19.3
+	k8s.io/client-go v0.19.4
 	k8s.io/helm v0.0.0-00010101000000-000000000000
 	sigs.k8s.io/yaml v1.2.0
 )
