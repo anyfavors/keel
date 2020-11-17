@@ -65,7 +65,7 @@ require (
 	google.golang.org/grpc v1.31.1
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	helm.sh/helm/v3 v3.0.0-00010101000000-000000000000
-	k8s.io/api v0.19.3
+	k8s.io/api v0.19.4
 	k8s.io/apimachinery v0.19.4
 	k8s.io/cli-runtime v0.17.2
 	k8s.io/client-go v0.19.4
