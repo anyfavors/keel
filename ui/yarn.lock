@@ -8393,10 +8393,10 @@ mkdirp@0.5.x, mkdirp@0.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@^0.5.3, mkdirp@~0
   dependencies:
     minimist "^1.2.5"
 
-mockjs2@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/mockjs2/-/mockjs2-1.0.5.tgz#be80f670e0468092b15454169591e936c3bd29f9"
-  integrity sha512-2RPYSxVuIsmV0S8FwUh2srTm+K1EWr57GyUgjA5+6H49ZwqtFUlRfZAVJNYwKtswxehP4FDTsfuCRMd290bFTA==
+mockjs2@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/mockjs2/-/mockjs2-1.0.8.tgz#37ca061d6c3319d888292aef656434380971c94c"
+  integrity sha512-IXY9wzq3Pr2tybkJnT+dzrTz0GBRTtgXc7Cke/UUQyyWtbjDrck8uZ3NmMF4LaWgAD8vm8EMGcBk4Itc6nzpRg==
   dependencies:
     commander "*"
 
