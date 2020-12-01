@@ -12001,10 +12001,10 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-viser-vue@^2.3.3:
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/viser-vue/-/viser-vue-2.4.5.tgz#77318bb32113c5c10868c85c79cbbbff4a16d394"
-  integrity sha512-wSs07wKqsYj9hBzRLqSb87ytfnZrpP/KXQ54bMcjjrX+/ubSLoj1cVEoQcU9ivLy0KUTi1mANHQPA2i9q8UVTQ==
+viser-vue@^2.4.8:
+  version "2.4.8"
+  resolved "https://registry.yarnpkg.com/viser-vue/-/viser-vue-2.4.8.tgz#3fdb058445cba59c1ccee9cc9c2024bec29926d4"
+  integrity sha512-ERAREN+6k/ywrwT+swcMo4CDIAq6dBjnB0+lhmsSfaip06BGHSBfNKg6yl7/4GJ9Nk2kioUw3llNhEboJuIKmQ==
   dependencies:
     "@types/node" "*"
     viser "^2.0.0"
