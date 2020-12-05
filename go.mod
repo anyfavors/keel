@@ -61,7 +61,7 @@ require (
 	github.com/tbruyelle/hipchat-go v0.0.0-20170717082847-35aebc99209a
 	github.com/urfave/negroni v1.0.0
 	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
-	google.golang.org/api v0.35.0
+	google.golang.org/api v0.36.0
 	google.golang.org/grpc v1.33.2
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	helm.sh/helm/v3 v3.0.0-00010101000000-000000000000
