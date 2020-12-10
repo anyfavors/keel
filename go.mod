@@ -37,7 +37,7 @@ require (
 	cloud.google.com/go/pubsub v1.9.0
 	github.com/Masterminds/semver v1.5.0
 	github.com/Masterminds/sprig v2.22.0+incompatible // indirect
-	github.com/aws/aws-sdk-go v1.36.1
+	github.com/aws/aws-sdk-go v1.36.5
 	github.com/daneharrigan/hipchat v0.0.0-20170512185232-835dc879394a
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/docker/distribution v2.7.1+incompatible
