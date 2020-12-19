@@ -34,7 +34,7 @@ replace (
 replace k8s.io/kubernetes => k8s.io/kubernetes v1.16.10
 
 require (
-	cloud.google.com/go/pubsub v1.9.0
+	cloud.google.com/go/pubsub v1.9.1
 	github.com/Masterminds/semver v1.5.0
 	github.com/Masterminds/sprig v2.22.0+incompatible // indirect
 	github.com/aws/aws-sdk-go v1.36.1
