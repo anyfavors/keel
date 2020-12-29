@@ -50,7 +50,7 @@
     "eslint-plugin-html": "^6.1.1",
     "eslint-plugin-vue": "^7.3.0",
     "less": "^3.13.1",
-    "less-loader": "^7.1.0",
+    "less-loader": "^7.2.1",
     "opencollective": "^1.0.3",
     "opencollective-postinstall": "^2.0.3",
     "vue-svg-icon-loader": "^2.1.1",
