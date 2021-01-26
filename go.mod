@@ -42,8 +42,8 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/docker/distribution v2.7.1+incompatible
 	github.com/ghodss/yaml v1.0.0
-	github.com/golang/protobuf v1.4.2
-	github.com/google/uuid v1.1.1
+	github.com/golang/protobuf v1.4.3
+	github.com/google/uuid v1.1.2
 	github.com/gorilla/mux v1.7.4
 	github.com/jinzhu/gorm v1.9.12
 	github.com/jmoiron/sqlx v1.2.0 // indirect
@@ -60,9 +60,9 @@ require (
 	github.com/stretchr/testify v1.5.1
 	github.com/tbruyelle/hipchat-go v0.0.0-20170717082847-35aebc99209a
 	github.com/urfave/negroni v1.0.0
-	golang.org/x/net v0.0.0-20200602114024-627f9648deb9
-	google.golang.org/api v0.26.0
-	google.golang.org/grpc v1.29.1
+	golang.org/x/net v0.0.0-20201209123823-ac852fbbde11
+	google.golang.org/api v0.37.0
+	google.golang.org/grpc v1.34.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	helm.sh/helm/v3 v3.0.0-00010101000000-000000000000
 	k8s.io/api v0.17.2
