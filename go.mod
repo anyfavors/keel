@@ -62,7 +62,7 @@ require (
 	github.com/urfave/negroni v1.0.0
 	golang.org/x/net v0.0.0-20201209123823-ac852fbbde11
 	google.golang.org/api v0.38.0
-	google.golang.org/grpc v1.34.0
+	google.golang.org/grpc v1.35.0
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	helm.sh/helm/v3 v3.0.0-00010101000000-000000000000
 	k8s.io/api v0.20.2
