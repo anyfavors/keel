@@ -42,7 +42,7 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/docker/distribution v2.7.1+incompatible
 	github.com/ghodss/yaml v1.0.0
-	github.com/golang/protobuf v1.4.2
+	github.com/golang/protobuf v1.4.3
 	github.com/google/uuid v1.1.1
 	github.com/gorilla/mux v1.7.4
 	github.com/jinzhu/gorm v1.9.12
@@ -51,7 +51,7 @@ require (
 	github.com/mfridman/tparse v0.8.2 // indirect
 	github.com/nlopes/slack v0.6.0
 	github.com/opencontainers/go-digest v1.0.0
-	github.com/prometheus/client_golang v1.6.0
+	github.com/prometheus/client_golang v1.9.0
 	github.com/rubenv/sql-migrate v0.0.0-20200429072036-ae26b214fa43 // indirect
 	github.com/rusenask/cron v1.1.0
 	github.com/rusenask/docker-registry-client v0.0.0-20200210164146-049272422097
@@ -60,7 +60,7 @@ require (
 	github.com/stretchr/testify v1.5.1
 	github.com/tbruyelle/hipchat-go v0.0.0-20170717082847-35aebc99209a
 	github.com/urfave/negroni v1.0.0
-	golang.org/x/net v0.0.0-20200602114024-627f9648deb9
+	golang.org/x/net v0.0.0-20200625001655-4c5254603344
 	google.golang.org/api v0.26.0
 	google.golang.org/grpc v1.29.1
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
