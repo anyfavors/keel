@@ -62,7 +62,7 @@ require (
 	github.com/tbruyelle/hipchat-go v0.0.0-20170717082847-35aebc99209a
 	github.com/urfave/negroni v1.0.0
 	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
-	google.golang.org/api v0.26.0
+	google.golang.org/api v0.36.0
 	google.golang.org/grpc v1.37.1
 	google.golang.org/grpc/examples v0.0.0-20210518173205-c9c9a7536f57 // indirect
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
