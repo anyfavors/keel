@@ -56,7 +56,7 @@ require (
 	github.com/rusenask/cron v1.1.0
 	github.com/rusenask/docker-registry-client v0.0.0-20200210164146-049272422097
 	github.com/ryanuber/go-glob v1.0.0
-	github.com/sirupsen/logrus v1.6.0
+	github.com/sirupsen/logrus v1.8.1
 	github.com/stretchr/testify v1.6.1
 	github.com/tbruyelle/hipchat-go v0.0.0-20170717082847-35aebc99209a
 	github.com/urfave/negroni v1.0.0
