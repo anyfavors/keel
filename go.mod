@@ -44,7 +44,7 @@ require (
 	github.com/docker/distribution v2.7.1+incompatible
 	github.com/ghodss/yaml v1.0.0
 	github.com/google/uuid v1.2.0
-	github.com/gorilla/mux v1.7.4
+	github.com/gorilla/mux v1.8.0
 	github.com/jinzhu/gorm v1.9.12
 	github.com/jmoiron/sqlx v1.2.0 // indirect
 	github.com/mattn/go-colorable v0.1.7 // indirect
