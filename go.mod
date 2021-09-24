@@ -73,5 +73,5 @@ require (
 	k8s.io/client-go v0.21.0
 	k8s.io/helm v0.0.0-00010101000000-000000000000
 	rsc.io/letsencrypt v0.0.3 // indirect
-	sigs.k8s.io/yaml v1.2.0
+	sigs.k8s.io/yaml v1.3.0
 )
