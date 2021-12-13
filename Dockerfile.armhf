@@ -1,7 +1,7 @@
 FROM node:lts-alpine as ui
 WORKDIR /app
 COPY ui /app
-RUN apk add --update python make g++\
+RUN apk add --update python3 make g++\
    && rm -rf /var/cache/apk/*
 RUN yarn
 RUN yarn run lint --no-fix
