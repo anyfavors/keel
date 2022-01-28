@@ -12464,10 +12464,10 @@ vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-ls@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/vue-ls/-/vue-ls-4.0.0.tgz#fb27d232d7ca88fcf6e64c7258f634abd34f99aa"
-  integrity sha512-zVN3prokwUZVWIjEitBqGO5Hi4fmgE3xdSWFGkY+OC4SMpnaD9EIyMX8tmPU5K1PGsAeBCFuE0RzmrlyD/QE7g==
+vue-ls@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/vue-ls/-/vue-ls-4.1.0.tgz#8296dfb2088af9f0c5cbf67599bcbd4a08847ff1"
+  integrity sha512-0XOEw5JdnqQT5QmJWYb9K2g3d8ax2OTWe5ExcG425vXLavHBmkYsE9/cpO8b9o/00KFVkgg8xtgDaj6j6FZD+Q==
   dependencies:
     opencollective-postinstall "^2.0.2"
 
