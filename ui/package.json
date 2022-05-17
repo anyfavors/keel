@@ -30,7 +30,7 @@
     "vue-cropper": "0.5.7",
     "vue-ls": "^4.0.0",
     "vue-resource": "^1.5.3",
-    "vue-router": "^3.5.2",
+    "vue-router": "^4.0.13",
     "vue-svg-component-runtime": "^1.0.1",
     "vuex": "^3.6.2"
   },
