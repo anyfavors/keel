@@ -14,7 +14,7 @@
   "dependencies": {
     "@antv/data-set": "^0.11.8",
     "@websanova/vue-auth": "^4.1.6",
-    "ant-design-vue": "~1.7.8",
+    "ant-design-vue": "~3.2.7",
     "core-js": "^3.21.1",
     "enquire.js": "^2.1.6",
     "js-cookie": "^3.0.1",
